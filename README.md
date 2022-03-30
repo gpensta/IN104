@@ -42,6 +42,13 @@ Penser à mettre à jour le tableau d'avancement.
 
 ## Séance du 5 avril
 
+Si vous ne savez pas quels arguments spécifier dans la fonction STFT, les lignes 30 - 56 de https://github.com/Steboss/music_retrieval/blob/master/stft/installer/stft.pyx vous éclairent. 
+
+**Objectifs** : Compresser le tableau STFT en un vecteur 1D en prenant la moyenne et l'écart-type selon chaque ligne (ou chaque colonne) et écrire ce vecteur dans un fichier csv. 
+
+Penser à mettre à jour le tableau d'avancement.
+
+## Séance du 12 avril
 
 
 
