@@ -6,7 +6,8 @@ Produire un programme C compilé permettant d'effectuer une prédiction de genre
 
 ## Sources utiles :
 
-Base de données de fichiers audios : http://marsyas.info/downloads/datasets.html
+Base de données de fichiers audios : http://marsyas.info/downloads/datasets.html (bibliographie https://arxiv.org/pdf/1306.1461.pdf)
+
 
 Projet permettant d'extraire les STFT d'un son : https://github.com/Steboss/music_retrieval/tree/master/stft
 
@@ -16,7 +17,7 @@ Tableau d'avancement : https://docs.google.com/spreadsheets/d/1iR_tJWAhS-ZisnpE-
 
 ## Séance du 22 mars
 
-**Objectifs** : Présentation du projet et initialisation de Git
+**Objectifs** : Compréhension du projet et initialisation de Git
 
 Normalement chaque groupe doit avoir initialisé un Git et l'avoir poussé sur Github afin de pouvoir communiquer entre collègues. 
 
@@ -49,7 +50,3 @@ Si vous ne savez pas quels arguments spécifier dans la fonction STFT, les ligne
 Penser à mettre à jour le tableau d'avancement.
 
 ## Séance du 12 avril
-
-
-
-
