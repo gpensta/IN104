@@ -17,11 +17,11 @@ y = batch_audio[:, 0]
 
 X_train, X_test, y_train, y_test = train_test_split(features, y, test_size=0.20, random_state=0)
 
-rbs_clf = RobustScaler()
-X_train = rbs_clf.fit_transform(X_train)
-X_test = rbs_clf.transform(X_test)
+# rbs_clf = RobustScaler()
+# X_train = rbs_clf.fit_transform(X_train)
+# X_test = rbs_clf.transform(X_test)
 
-model = LinearSVC(C=0.1, max_iter=1e5, tol=1e-4)
+model = LinearSVC(C=0.1, max_iter=1e6, tol=1e-4)
 model.fit(X_train, y_train)
 
 print("Performances du modèle sur la base de données de test : ", model.score(X_test, y_test))

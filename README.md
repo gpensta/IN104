@@ -41,12 +41,18 @@ gcc wave.c -Wall -lfftw3 -lm -o wave
 ```
 Penser à mettre à jour le tableau d'avancement.
 
-## Séance du 5 avril
+## Séance du 12 avril
 
 Si vous ne savez pas quels arguments spécifier dans la fonction STFT, les lignes 30 - 56 de https://github.com/Steboss/music_retrieval/blob/master/stft/installer/stft.pyx vous éclairent. 
 
-**Objectifs** : Compresser le tableau STFT en un vecteur 1D en prenant la moyenne et l'écart-type selon chaque ligne (ou chaque colonne) et écrire ce vecteur dans un fichier csv. 
+**Objectifs** : Compresser le tableau des STFT en un vecteur 1D en prenant la moyenne et l'écart-type (selon l'axe des fréquences ou selon l'axe du temps) et écrire ce vecteur dans un fichier csv précédé du label correspondant au genre musical représenté le son encodé (entier compris entre 0 et 9, e.g. blues := 0, metal := 6, rock := 9). Par exemple, pour du classique, nous devrions écrire la ligne suivante :
+
+```
+1; mu_1; sigma_1; ...; ...; mu_n, sigma_n;
+```
+
+Afin de contenir le temps de calcul pour l'optimisation du classifieur tout en préservant une certaine précision, le vecteur sera d'une dimension d'environ 512.
 
 Penser à mettre à jour le tableau d'avancement.
 
-## Séance du 12 avril
+## Séance du 19 avril
