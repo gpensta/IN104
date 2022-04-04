@@ -43,9 +43,12 @@ Penser à mettre à jour le tableau d'avancement.
 
 ## Séance du 12 avril
 
-Si vous ne savez pas quels arguments spécifier dans la fonction STFT, les lignes 30 - 56 de https://github.com/Steboss/music_retrieval/blob/master/stft/installer/stft.pyx vous éclairent. 
+Concernant la gestion de projet, j'ai ajouté des éléments aux slides ainsi qu'au descriptif détaillé. Un Makefile générique est par ailleurs disponible. 
+Si vous souhaitez importer/télécharger ces modifications et que vous avez cloné gpensta/IN104, il vous suffit d'effectuer la commande `git pull` ou `git pull origin master`. 
 
-**Objectifs** : Compresser le tableau des STFT en un vecteur 1D en prenant la moyenne et l'écart-type (selon l'axe des fréquences ou selon l'axe du temps) et écrire ce vecteur dans un fichier csv précédé du label correspondant au genre musical représenté le son encodé (entier compris entre 0 et 9, e.g. blues := 0, metal := 6, rock := 9). Par exemple, pour du classique, nous devrions écrire la ligne suivante :
+Concernant l'objectif de la séance du 29 mars, si vous ne savez pas quels arguments spécifier dans la fonction STFT, les lignes 30 - 56 de https://github.com/Steboss/music_retrieval/blob/master/stft/installer/stft.pyx vous éclairent. 
+
+**Objectifs** : Compresser le tableau des STFT en un vecteur 1D en prenant la moyenne et l'écart-type (selon l'axe des fréquences ou selon l'axe du temps) et écrire ce vecteur dans un fichier csv précédé du label correspondant au genre musical représenté par le son encodé (entier compris entre 0 et 9, e.g. blues := 0, metal := 6, rock := 9). Par exemple, pour du classique, nous devrions écrire la ligne suivante :
 
 ```
 1; mu_1; sigma_1; ...; ...; mu_n, sigma_n;
@@ -53,6 +56,22 @@ Si vous ne savez pas quels arguments spécifier dans la fonction STFT, les ligne
 
 Afin de contenir le temps de calcul pour l'optimisation du classifieur tout en préservant une certaine précision, le vecteur sera d'une dimension d'environ 512.
 
-Penser à mettre à jour le tableau d'avancement.
+Penser à organiser votre code en plusieurs fichiers de modules (*.c et *.h), à compiler le projet avec un Makefile et à mettre à jour le tableau d'avancement.
+
+Voici un exemple d'organisation : 
+
+└── src
+    ├── include
+    │   ├── audioread.c 
+    │   ├── audioread.h
+    │   ├── encoding.c 
+    │   ├── encoding.h
+    │   ├── prediction.c
+    │   ├── prediction.h
+    │   ├── stft.c
+    │   ├── stft.h
+    │   ├── utils.c (fonction mathématiques élémentaires (argmax, produit matriciel ... )
+    │   └── utils.h
+    └── main.c
 
 ## Séance du 19 avril
