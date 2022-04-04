@@ -61,6 +61,8 @@ Penser à organiser votre code en plusieurs fichiers de modules (*.c et *.h), à
 Voici un exemple d'organisation : 
 
 ```
+├── README.md
+├── Makefile
 └── src
     ├── include
     │   ├── audioread.c 
