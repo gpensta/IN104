@@ -71,7 +71,7 @@ Voici un exemple d'organisation :
     │   ├── prediction.h
     │   ├── stft.c
     │   ├── stft.h
-    │   ├── utils.c (fonction mathématiques élémentaires (argmax, produit matriciel ... )
+    │   ├── utils.c (fonctions mathématiques élémentaires (argmax, produit matriciel ... )
     │   └── utils.h
     └── main.c
 ```
