@@ -60,6 +60,7 @@ Penser à organiser votre code en plusieurs fichiers de modules (*.c et *.h), à
 
 Voici un exemple d'organisation : 
 
+```
 └── src
     ├── include
     │   ├── audioread.c 
@@ -73,5 +74,6 @@ Voici un exemple d'organisation :
     │   ├── utils.c (fonction mathématiques élémentaires (argmax, produit matriciel ... )
     │   └── utils.h
     └── main.c
+```
 
 ## Séance du 19 avril
