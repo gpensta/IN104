@@ -109,7 +109,7 @@ Assurez-vous d'avoir bien "push" votre code sur GitHub et d'avoir validé votre 
 
 Avec la séance du 3 mai comprise, il ne reste plus que 2 x 2h avant la soutenance du 24 mai.
 Idéalement, il faudrait avoir terminé la construction du fichier *.csv de features avant la séance du 3 mai. 
-D'ici le 3 mai, si vous avez un élément bloquant la validation de cette tâche, n'hésitez à me contacter (PRENOM.NOM@ensta-paris.fr) ou à venir me voir en R.2.20. 
+D'ici le 3 mai, si vous avez un élément bloquant la validation de cette tâche, n'hésitez pas à me contacter (PRENOM.NOM@ensta-paris.fr) ou à venir directement me voir en R.2.20. 
 
 Selon cette prévision, vous pourriez alors effectuer l'entrainement et la prédiction le 3 mai, cela est rapide.
 La séance du 10 mai pourrait être consacrée à la finalisation du projet avant la soutenance.
