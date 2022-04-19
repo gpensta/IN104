@@ -86,19 +86,19 @@ Je l'ai indiqué à beaucoup de groupes lors de la séance du 12 avril, pour les
 double* stft(double *wav_data, int samples, int windowSize, int hop_size, double *magnitude, int sample_freq, int length)
 ```
 
-**wav_data** := signal audio en entrée (sortie de audio_read), cette taille vous est donnée par la fonction audioread.
+`wav_data` := signal audio en entrée (sortie de audio_read), cette taille vous est donnée par la fonction audioread.
 
-**samples** := la dimension du tableau magnitude (sortie de stft), elle vaut nCols x nRows = int( (length/(windowSize/2))*((windowSize/2)+1)) (c.f ligne 36 de https://github.com/Steboss/music_retrieval/blob/master/stft/installer/stft.pyx).
+`samples` := la dimension du tableau magnitude (sortie de stft), elle vaut nCols x nRows = int( (`length`/(`windowSize`/2))*((`windowSize`/2)+1)) (c.f ligne 36 de https://github.com/Steboss/music_retrieval/blob/master/stft/installer/stft.pyx).
 
-**windowSize** := la taille de la fenêtre, on peut choisir 512 afin d'avoir un vecteur encodé de taille raisonnable.
+`windowSize` := la taille de la fenêtre, on peut choisir 512 afin d'avoir un vecteur encodé de taille raisonnable.
 
-**hop_size** := facteur de recouvrement, 512 (les fenêtres seront disjointes car de la taille de **windowSize**).
+`hop_size` := facteur de recouvrement, 512 (les fenêtres seront disjointes car de la taille de `windowSize`).
 
-**magnitude** := sortie de la STFT, il s'agit d'un vecteur 1D de **samples** elements, il représente un tableau 2D où nCols := (length/(windowSize/2)) et nRows = ((windowSize/2)+1)) (c.f. construction de la variable **samples**). On peut accéder à l'élément (i, j) de ce tableau en prenant l'élément en position i * nCols + j de **magnitude**. 
+`magnitude` := sortie de la STFT, il s'agit d'un vecteur 1D de `samples` elements, il représente un tableau 2D où nCols := (`length`/(`windowSize`/2)) et nRows = ((`windowSize`/2)+1)) (c.f. construction de la variable `samples`). On peut accéder à l'élément (i, j) de ce tableau en prenant l'élément en position i * nCols + j de `magnitude`. 
 
-**sample_freq** := fréquence d'échantillonage du signal dans notre base de donnée, elle est de 22050 Hz.
+`sample_freq` := fréquence d'échantillonage du signal dans notre base de donnée, elle est de 22050 Hz.
 
-**length** := nombre d'échantillons contenus dans le signal audio i.e. taille de **wav_data**.
+`length` := nombre d'échantillons contenus dans le signal audio i.e. taille de `wav_data`.
 
 ### **Objectifs de la séance**
 
