@@ -105,11 +105,16 @@ double* stft(double *wav_data, int samples, int windowSize, int hop_size, double
 Terminer les tâches du 12 avril. Quand cela est terminé, encoder les 1000 fichiers audios de la base de données dans le fichier csv : une ligne par son.
 Assurez-vous d'avoir bien "push" votre code sur GitHub et d'avoir validé votre case dans le tableau d'avancement.
 
-### **Prévision et gestion de projet**
+### **Prévisions et gestion de projet**
 
 Avec la séance du du 3 mai comprise, il ne reste plus que 2 x 2h avant la soutenance du 24 mai.
 Idéalement, il faudrait avoir terminé la construction du fichier *.csv de features avant la séance du 3 mai. 
-Vous pourriez alors effectuer l'entrainement et la prédiction le 3 mai, cela est rapide.
-La séance du 10 mai pourrait être consacrée à la finalisation du projet avant la soutenance. 
+D'ici le 3 mai, n'hésitez à me contacter ou à venir me voir en R.2.20, si vous avez un élément bloquant la validation de cette tâche. 
+
+Selon cette prévision, vous pourriez alors effectuer l'entrainement et la prédiction le 3 mai, cela est rapide.
+La séance du 10 mai pourrait être consacrée à la finalisation du projet avant la soutenance.
+
+Pour gagner en efficacité avant la soutenance vous pouvez vous répartir les tâches indépendantes (Makefile, Git / GitHub, compilation du module de prédiction (produit matriciel W @ x )
+
 
 ## Séance du 3 Mai
