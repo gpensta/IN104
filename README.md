@@ -114,7 +114,6 @@ D'ici le 3 mai, n'hésitez à me contacter ou à venir me voir en R.2.20, si vou
 Selon cette prévision, vous pourriez alors effectuer l'entrainement et la prédiction le 3 mai, cela est rapide.
 La séance du 10 mai pourrait être consacrée à la finalisation du projet avant la soutenance.
 
-Pour gagner en efficacité avant la soutenance vous pouvez vous répartir les tâches indépendantes (Makefile, Git / GitHub, compilation du module de prédiction (produit matriciel W @ x )
-
+Pour accélérer le développement, vous pouvez également vous répartir les tâches indépendantes : Makefile, Git / GitHub, module pour extraire la moyenne et l'écart-type selon les lignes d'un tableau (sortie de STFT : `magnitude`), module de prédiction (lecture d'un fichier csv de poids W et b puis produit matriciel W @ x + b et argmax du résultat), etc.
 
 ## Séance du 3 Mai
