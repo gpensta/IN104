@@ -116,4 +116,25 @@ La séance du 10 mai pourrait être consacrée à la finalisation du projet avan
 
 Pour accélérer le développement, vous pouvez également vous répartir les tâches indépendantes : Makefile, Git / GitHub, module pour extraire la moyenne et l'écart-type selon les lignes d'un tableau (sortie de STFT : `magnitude`), module de prédiction (lecture d'un fichier csv de poids W et b puis produit matriciel W @ x + b et argmax du résultat), etc.
 
+Avec les paramètres de STFT indiqués pour blues.00000.wav, les 10 premières valeurs de magnitude sont les suivantes :
+
+```
+96.167805
+327.900165
+93.793411
+186.160593
+180.747299
+114.125950
+140.482962
+148.101793
+116.486766
+303.920547
+```
+
+Les 3 premieres moyennes et écart-types sont pour blues.00000.wav sont :
+
+```
+309.93, 310.45, 756.46, 584.67, 793.74, 582.40
+```
+
 ## Séance du 3 Mai
