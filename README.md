@@ -51,7 +51,7 @@ Concernant l'objectif de la séance du 29 mars, si vous ne savez pas quels argum
 **Objectifs** : Compresser le tableau des STFT en un vecteur 1D en prenant la moyenne et l'écart-type (selon l'axe des fréquences ou selon l'axe du temps) et écrire ce vecteur dans un fichier csv précédé du label correspondant au genre musical représenté par le son encodé (entier compris entre 0 et 9, e.g. blues := 0, metal := 6, rock := 9). Par exemple, pour du classique, nous devrions écrire la ligne suivante :
 
 ```
-1; mu_1; sigma_1; ...; ...; mu_n, sigma_n;
+1; mu_1; sigma_1; ...; ...; mu_n; sigma_n;
 ```
 
 Afin de contenir le temps de calcul pour l'optimisation du classifieur tout en préservant une certaine précision, le vecteur sera d'une dimension d'environ 512.
@@ -100,9 +100,16 @@ double* stft(double *wav_data, int samples, int windowSize, int hop_size, double
 
 **length** := nombre d'échantillons contenus dans le signal audio i.e. taille de **wav_data**.
 
-### Objectifs de la séance
+### **Objectifs de la séance**
 
-Terminer les tâches du 12 avril. Valider votre case dans le tableau d'avancement.
-Quand cela est terminé, encoder les 1000 fichiers audios de la base de données dans le fichier csv : une ligne par son. 
+Terminer les tâches du 12 avril. Quand cela est terminé, encoder les 1000 fichiers audios de la base de données dans le fichier csv : une ligne par son.
+Assurez-vous d'avoir bien "push" votre code sur GitHub et d'avoir validé votre case dans le tableau d'avancement.
+
+### **Prévision et gestion de projet**
+
+Avec la séance du du 3 mai comprise, il ne reste plus que 2 x 2h avant la soutenance du 24 mai.
+Idéalement, il faudrait avoir terminé la construction du fichier *.csv de features avant la séance du 3 mai. 
+Vous pourriez alors effectuer l'entrainement et la prédiction le 3 mai, cela est rapide.
+La séance du 10 mai pourrait être consacrée à la finalisation du projet avant la soutenance. 
 
 ## Séance du 3 Mai
