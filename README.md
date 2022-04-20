@@ -109,7 +109,7 @@ Pour écrire dans un fichier csv, vous pouvez utiliser ces lignes:
 
 ```C
 FILE* fp = fopen("path to feature csv file", "a+"); // ouvre le fichier csv.
-fprintf(fp, "%.2f, %.2f, ", mean[0]; std[0]); // écrit dans un fichier csv la moyenne et l'écart type de la première fréquence.
+fprintf(fp, "%.2f, %.2f, ", mean[0]; std[0]); // écriture de la moyenne et l'écart type de la première ligne.
 fclose(fp); // ferme le fichier csv.
 ```
 
