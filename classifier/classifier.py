@@ -4,6 +4,7 @@ from sklearn.preprocessing import LabelEncoder, RobustScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import plot_confusion_matrix
 from sklearn.svm import LinearSVC
+import numpy as np
 
 # Entraînement du classifieur
 
@@ -19,13 +20,21 @@ y = batch_audio[:, 0]
 
 X_train, X_test, y_train, y_test = train_test_split(features, y, test_size=0.20, random_state=0)
 
-model = LinearSVC(C=0.1, max_iter=1e6, tol=1e-4)
+model = LinearSVC(C=0.1, max_iter=1e5, tol=1e-4)
 model.fit(X_train, y_train)
 
 print("Performances du modèle sur la base de données de test : ", model.score(X_test, y_test))
 
 
-# Plot Confusion Matrix
+### Save W and b
+
+# b = model.intercept_
+# w = model.coef_
+
+# np.savetxt("path to w", w, fmt='%.4f',delimiter=",")
+# np.savetxt("path to b", b, fmt='%.4f',delimiter=",")
+
+### Plot Confusion Matrix
 
 # labels = ['blues', 'classical', 'country', 'disco', 'hiphop', 'jazz', 'metal', 'pop', 'reggae', 'rock']
 

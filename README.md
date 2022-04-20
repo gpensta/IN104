@@ -29,14 +29,14 @@ Penser à mettre à jour le tableau d'avancement.
 
 Pour utiliser le script features-encoding/stft.c, il faut avoir installé :
 
-```
+```bash
 sudo apt install libfftw3-dev
 sudo apt install fftw3 
 ```
 
 Penser à lier les bibliothèques -math et fftw3- lors de la compilation :
 
-```
+```bash
 gcc wave.c -Wall -lfftw3 -lm -o wave
 ```
 Penser à mettre à jour le tableau d'avancement.
@@ -50,7 +50,7 @@ Concernant l'objectif de la séance du 29 mars, si vous ne savez pas quels argum
 
 **Objectifs** : Compresser le tableau des STFT en un vecteur 1D en prenant la moyenne et l'écart-type (selon l'axe des fréquences ou selon l'axe du temps) et écrire ce vecteur dans un fichier csv précédé du label correspondant au genre musical représenté par le son encodé (entier compris entre 0 et 9, e.g. blues := 0, metal := 6, rock := 9). Par exemple, pour du classique, nous devrions écrire la ligne suivante :
 
-```
+```csv
 1; mu_1; sigma_1; ...; ...; mu_n; sigma_n;
 ```
 
@@ -60,7 +60,7 @@ Penser à organiser votre code en plusieurs fichiers de modules (*.c et *.h), à
 
 Voici un exemple d'organisation : 
 
-```
+```bash
 ├── README.md
 ├── Makefile
 └── src
@@ -92,7 +92,7 @@ double* stft(double *wav_data, int samples, int windowSize, int hop_size, double
 
 `windowSize` := la taille de la fenêtre, on peut choisir 512 afin d'avoir un vecteur encodé de taille raisonnable.
 
-`hop_size` := facteur de recouvrement, 512 (les fenêtres seront disjointes car de la taille de `windowSize`).
+`hop_size` := facteur de recouvrement, 512 (les fenêtres seront alors disjointes car de la taille de `windowSize`).
 
 `magnitude` := sortie de la STFT, il s'agit d'un vecteur 1D de `samples` elements, il représente un tableau 2D où nCols := (`length`/(`windowSize`/2)) et nRows = ((`windowSize`/2)+1)) (c.f. construction de la variable `samples`). On peut accéder à l'élément (i, j) de ce tableau en prenant l'élément en position i * nCols + j de `magnitude`. 
 
@@ -105,6 +105,14 @@ double* stft(double *wav_data, int samples, int windowSize, int hop_size, double
 Terminer les tâches du 12 avril. Quand cela est terminé, encoder les 1000 fichiers audios de la base de données dans le fichier csv : une ligne par son.
 Assurez-vous d'avoir bien "push" votre code sur GitHub et d'avoir validé votre case dans le tableau d'avancement.
 
+Pour écrire dans un fichier csv, vous pouvez utiliser ces lignes: 
+
+```C
+FILE* fp = fopen("path to feature csv file", "a+"); // ouvre le fichier csv.
+fprintf(fp, "%.2f, %.2f, ", mean[0]; std[0]); // écrit dans un fichier csv la moyenne et l'écart type de la première fréquence.
+fclose(fp); // ferme le fichier csv.
+```
+
 ### **Prévisions et gestion de projet**
 
 Avec la séance du 3 mai comprise, il ne reste plus que 2 x 2h avant la soutenance du 24 mai.
@@ -116,7 +124,7 @@ La séance du 10 mai pourrait être consacrée à la finalisation du projet avan
 
 Pour accélérer le développement, vous pouvez également vous répartir les tâches indépendantes : Makefile, Git / GitHub, module pour extraire la moyenne et l'écart-type selon les lignes d'un tableau (sortie de STFT : `magnitude`), module de prédiction (lecture d'un fichier csv de poids W et b puis produit matriciel W @ x + b et argmax du résultat), etc.
 
-Avec les paramètres de STFT indiqués pour blues.00000.wav, les 10 premières valeurs de magnitude sont les suivantes :
+Avec les paramètres de STFT indiqués pour blues.00000.wav, les 10 premières valeurs de `magnitude` sont les suivantes :
 
 ```
 96.167805
@@ -131,10 +139,32 @@ Avec les paramètres de STFT indiqués pour blues.00000.wav, les 10 premières v
 303.920547
 ```
 
-Les 3 premieres moyennes et écart-types sont pour blues.00000.wav sont :
+Les 3 premières moyennes et écart-types pour blues.00000.wav sont :
 
 ```
 309.93, 310.45, 756.46, 584.67, 793.74, 582.40
 ```
 
 ## Séance du 3 Mai
+
+
+### Objectifs de la séance
+
+A cette étape, vous devez avoir un fichier csv de 1000 lignes et 514 + 1 colonnes séparées par des ";".
+
+Il faut classifier ces vecteurs avec le programme python : `classifier.py`. Avant de l'utiliser, vous avez deux bibliothèques à installer.
+
+```bash
+sudo apt update
+sudo apt install python3-pip  # gestionnaire de bibliothèques
+pip3 install scikit-learn # bibliothèque d'algorithmes d'apprentissage
+pip3 install pandas # bibliothèque de gestion des données
+```
+
+Un score est affiché, il correspond à l'accuracy. L'accuracy est une métrique représentant le pourcentage de morceau classifiés correctement sur la base de données de test. Vous devriez obtenir un score compris entre 0.6 et 0.85.  
+
+Vous pouvez sauvegarder W et b dans un fichier csv puis effectuer la prédiction avec un programme C. 
+
+## Séance du 10 Mai
+
+## Soutenance du 25 Mai
