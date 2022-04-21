@@ -86,7 +86,7 @@ Je l'ai indiqué à beaucoup de groupes lors de la séance du 12 avril, pour les
 double* stft(double *wav_data, int samples, int windowSize, int hop_size, double *magnitude, int sample_freq, int length)
 ```
 
-`wav_data` := signal audio en entrée (sortie de audio_read), cette taille vous est donnée par la fonction audioread.
+`wav_data` := signal audio en entrée (sortie de audio_read).
 
 `samples` := la dimension du tableau magnitude (sortie de stft), elle vaut nCols x nRows = int( (`length`/(`windowSize`/2))*((`windowSize`/2)+1)) (c.f ligne 36 de https://github.com/Steboss/music_retrieval/blob/master/stft/installer/stft.pyx).
 
@@ -159,10 +159,10 @@ Il faut classifier ces vecteurs avec le programme python : `classifier.py`. Avan
 sudo apt update
 sudo apt install python3-pip  # gestionnaire de bibliothèques
 pip3 install scikit-learn # bibliothèque d'algorithmes d'apprentissage
-pip3 install pandas # bibliothèque de gestion des données
+pip3 install pandas # bibliothèque de gestion des données (mise-en-forme, statistiques, visualisation)
 ```
 
-Un score est affiché, il correspond à l'accuracy. L'accuracy est une métrique représentant le pourcentage de morceau classifiés correctement sur la base de données de test. Vous devriez obtenir un score compris entre 0.6 et 0.85.  
+Un score est affiché, il correspond à l'accuracy. L'accuracy est une métrique représentant le pourcentage de morceaux classifiés correctement sur la base de données de test. Vous devriez obtenir un score compris entre 0.6 et 0.85.  
 
 Vous pouvez sauvegarder W et b dans un fichier csv puis effectuer la prédiction avec un programme C. 
 
