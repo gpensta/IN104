@@ -94,9 +94,9 @@ double* stft(double *wav_data, int samples, int windowSize, int hop_size, double
 
 `hop_size` := facteur de recouvrement, 512 (les fenêtres seront alors disjointes car de la taille de `windowSize`).
 
-`magnitude` := sortie de la STFT, il s'agit d'un vecteur 1D de `samples` elements, il représente un tableau 2D où nCols := (`length`/(`windowSize`/2)) et nRows = ((`windowSize`/2)+1)) (c.f. construction de la variable `samples`). On peut accéder à l'élément (i, j) de ce tableau en prenant l'élément en position i * nCols + j de `magnitude`. 
+`magnitude` := sortie de la STFT, il s'agit d'un vecteur 1D de `samples` éléments, il représente un tableau 2D où nCols := (`length`/(`windowSize`/2)) et nRows = ((`windowSize`/2)+1)) (c.f. construction de la variable `samples`). On peut accéder à l'élément (i, j) de ce tableau en prenant l'élément en position i * nCols + j de `magnitude`. 
 
-`sample_freq` := fréquence d'échantillonage du signal dans notre base de donnée, elle est de 22050 Hz.
+`sample_freq` := fréquence d'échantillonage du signal dans notre base de données, elle est de 22050 Hz.
 
 `length` := nombre d'échantillons contenus dans le signal audio i.e. taille de `wav_data`.
 
