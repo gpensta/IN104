@@ -143,7 +143,7 @@ Avec les paramètres de STFT indiqués pour blues.00000.wav, les 10 premières v
 Les 3 premières moyennes et écart-types pour blues.00000.wav sont :
 
 ```
-309.93, 310.45, 756.46, 584.67, 793.74, 582.40
+300.82, 297.78, 735.82, 595.73, 772.67, 605.82,
 ```
 
 ## Séance du 3 Mai
