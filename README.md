@@ -168,4 +168,4 @@ Vous pouvez sauvegarder W et b dans un fichier csv puis effectuer la prédiction
 
 ## Séance du 10 Mai
 
-## Soutenance du 25 Mai
+## Soutenance du 24 Mai
