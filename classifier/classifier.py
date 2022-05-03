@@ -49,14 +49,14 @@ print("Performances du modèle sur la base de données de test : ", model.score(
 
 ### Technique pour obtenir une nette amélioration des performances : normaliser les entrées du classifieur avec la batch normalization (Xi - mean / (std + epsilon)) 
 
-# def normalize(X):
-#     '''
-#     Batch normalization
-#     '''
-#     X_normalized = np.zeros((X.shape))
-#     for j in range(X.shape[1]):
-#         mean = np.mean(X[:, j])
-#         std = np.std(X[:, j])
-#         for i in range(X.shape[0]):
-#             X_normalized[i, j] = (X[i, j] - mean) / (std + 0.000001)
-#     return X_normalized
+    # def normalize(X):
+    #     '''
+    #     Batch normalization
+    #     '''
+    #     X_normalized = np.zeros((X.shape))
+    #     for j in range(X.shape[1]):
+    #         mean = np.mean(X[:, j])
+    #         std = np.std(X[:, j])
+    #         for i in range(X.shape[0]):
+    #             X_normalized[i, j] = (X[i, j] - mean) / (std + 0.000001)
+    #     return X_normalized

@@ -162,10 +162,13 @@ pip3 install scikit-learn # bibliothèque d'algorithmes d'apprentissage
 pip3 install pandas # bibliothèque de gestion des données (mise-en-forme, statistiques, visualisation)
 ```
 
-Un score est affiché, il correspond à l'accuracy. L'accuracy est une métrique représentant le pourcentage de morceaux classifiés correctement sur la base de données de test. Vous devriez obtenir un score compris entre 0.6 et 0.85.  
+Un score est affiché, il correspond à l'accuracy. L'accuracy est une métrique représentant le pourcentage de morceaux classifiés correctement sur la base de données de test. Vous devriez obtenir un score compris entre 0.6 et 0.85.
 
 Vous pouvez sauvegarder W et b dans un fichier csv puis effectuer la prédiction avec un programme C. 
 
 ## Séance du 10 Mai
 
+
 ## Soutenance du 24 Mai
+
+Le déroulement de la soutenance ainsi qu'une grille de notation indicative sont présentés [ici](soutenance.md).
