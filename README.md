@@ -27,7 +27,7 @@ Penser à mettre à jour le tableau d'avancement.
 
 **Objectifs** : Lire un fichier audio de issu de la base de données et effectuer sa STFT.
 
-Pour utiliser le script features-encoding/stft.c, il faut avoir installé :
+Pour utiliser le script [features-encoding/stft.c](features-encoding/stft.c), il faut avoir installé :
 
 ```bash
 sudo apt install libfftw3-dev
@@ -43,7 +43,7 @@ Penser à mettre à jour le tableau d'avancement.
 
 ## Séance du 12 avril
 
-Concernant la gestion de projet, j'ai ajouté des éléments aux slides ainsi qu'au descriptif détaillé. Un Makefile générique est par ailleurs disponible. 
+Concernant la gestion de projet, j'ai ajouté des éléments aux slides ainsi qu'au descriptif détaillé. Un [Makefile](Makefile) générique est par ailleurs disponible. 
 Si vous souhaitez importer/télécharger ces modifications et que vous avez cloné gpensta/IN104, il vous suffit d'effectuer la commande `git pull` ou `git pull origin master`. 
 
 Concernant l'objectif de la séance du 29 mars, si vous ne savez pas quels arguments spécifier dans la fonction STFT, les lignes 30 - 56 de https://github.com/Steboss/music_retrieval/blob/master/stft/installer/stft.pyx vous éclairent. 
@@ -56,7 +56,7 @@ Concernant l'objectif de la séance du 29 mars, si vous ne savez pas quels argum
 
 Afin de contenir le temps de calcul pour l'optimisation du classifieur tout en préservant une certaine précision, le vecteur sera d'une dimension d'environ 512.
 
-Penser à organiser votre code en plusieurs fichiers de modules (*.c et *.h), à compiler le projet avec un Makefile et à mettre à jour le tableau d'avancement.
+Penser à organiser votre code en plusieurs fichiers de modules (*.c et *.h), à compiler le projet avec un [Makefile](Makefile) et à mettre à jour le tableau d'avancement.
 
 Voici un exemple d'organisation : 
 
@@ -123,9 +123,9 @@ D'ici le 3 mai, si vous avez un élément bloquant la validation de cette tâche
 Selon cette prévision, vous pourriez alors effectuer l'entrainement et la prédiction le 3 mai, cela est rapide.
 La séance du 10 mai pourrait être consacrée à la finalisation du projet avant la soutenance.
 
-Pour accélérer le développement, vous pouvez également vous répartir les tâches indépendantes : Makefile, Git / GitHub, module pour extraire la moyenne et l'écart-type selon les lignes d'un tableau (sortie de STFT : `magnitude`), module de prédiction (lecture d'un fichier csv de poids W et b puis produit matriciel W @ x + b et argmax du résultat), etc.
+Pour accélérer le développement, vous pouvez également vous répartir les tâches indépendantes : [Makefile](Makefile), Git / GitHub, module pour extraire la moyenne et l'écart-type selon les lignes d'un tableau (sortie de [STFT](features-encoding/stft.c) : `magnitude`), module de prédiction (lecture d'un fichier csv de poids W et b puis produit matriciel W @ x + b et argmax du résultat), etc.
 
-Avec les paramètres de STFT indiqués pour blues.00000.wav, les 10 premières valeurs de `magnitude` sont les suivantes :
+Avec les paramètres de [STFT](features-encoding/stft.c) indiqués pour blues.00000.wav, les 10 premières valeurs de `magnitude` sont les suivantes :
 
 ```
 96.167805
@@ -153,7 +153,7 @@ Les 3 premières moyennes et écart-types pour blues.00000.wav sont :
 
 A cette étape, vous devez avoir un fichier csv de 1000 lignes et 514 + 1 colonnes séparées par des ";".
 
-Il faut classifier ces vecteurs avec le programme python : `classifier.py`. Avant de l'utiliser, vous avez deux bibliothèques à installer.
+Il faut classifier ces vecteurs avec le programme python : [`classifier.py`](classifier/classifier.py). Avant de l'utiliser, vous avez deux bibliothèques à installer.
 
 ```bash
 sudo apt update
