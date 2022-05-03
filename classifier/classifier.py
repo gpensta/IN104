@@ -6,7 +6,7 @@ from sklearn.metrics import plot_confusion_matrix
 from sklearn.svm import LinearSVC
 import numpy as np
 
-# Entraînement du classifieur
+### Entraînement du classifieur
 
 PATH = r'./data/features.csv'
 
@@ -18,7 +18,7 @@ batch_audio = pd.DataFrame(dataset).to_numpy()
 features = batch_audio[:, 1:]
 y = batch_audio[:, 0]
 
-X_train, X_test, y_train, y_test = train_test_split(features, y, test_size=0.20, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(features, y, test_size=0.2, random_state=0)
 
 model = LinearSVC(C=0.1, max_iter=100, tol=1e-4) 
 
@@ -45,3 +45,18 @@ print("Performances du modèle sur la base de données de test : ", model.score(
 # fig, ax = plt.subplots(figsize=(10, 10), dpi=300)
 # plot_confusion_matrix(model, X_test, y_test, ax=ax, normalize='true', display_labels=labels)
 # plt.savefig('confusion.png',transparent=False, facecolor='white' )
+
+
+### Technique pour obtenir une nette amélioration des performances : normaliser les entrées du classifieur avec la batch normalization (Xi - mean / (std + epsilon)) 
+
+# def normalize(X):
+#     '''
+#     Batch normalization
+#     '''
+#     X_normalized = np.zeros((X.shape))
+#     for j in range(X.shape[1]):
+#         mean = np.mean(X[:, j])
+#         std = np.std(X[:, j])
+#         for i in range(X.shape[0]):
+#             X_normalized[i, j] = (X[i, j] - mean) / (std + 0.000001)
+#     return X_normalized
