@@ -94,11 +94,14 @@ double* stft(double *wav_data, int samples, int windowSize, int hop_size, double
 
 `hop_size` := facteur de recouvrement, 512 (les fenêtres seront alors disjointes car de la taille de `windowSize`).
 
-`magnitude` := sortie de la STFT, il s'agit d'un vecteur 1D de `samples` éléments, il représente un tableau 2D où nCols := (`length`/(`windowSize`/2)) et nRows = ((`windowSize`/2)+1)) (c.f. construction de la variable `samples`). On peut accéder à l'élément (i, j) de ce tableau en prenant l'élément en position i * nCols + j de `magnitude`. 
+`magnitude` := sortie de la STFT, il s'agit d'un vecteur 1D de `samples` éléments, il représente un tableau 2D où nCols := (`length`/(`windowSize`/2)) et nRows = ((`windowSize`/2)+1)) (c.f. construction de la variable `samples`). On peut accéder à l'élément (i, j) de ce tableau en prenant l'élément en position i + j * nRows de `magnitude`. 
 
 `sample_freq` := fréquence d'échantillonage du signal dans notre base de données, elle est de 22050 Hz.
 
 `length` := nombre d'échantillons contenus dans le signal audio i.e. taille de `wav_data`.
+
+
+
 
 ### **Objectifs de la séance**
 
@@ -140,10 +143,19 @@ Avec les paramètres de [STFT](features-encoding/stft.c) indiqués pour blues.00
 303.920547
 ```
 
+La structure de magnitude est la suivante : 
+
+
+<img src="figures/structure_magnitude.png" alt="drawing" width="500"/>
+
+
+Magnitude est en fait un vecteur 1D **représentant une matrice où les colonnes sont concaténées** . 
+On accède donc à l'élément (i, j) de la matrice avec l'indice (i + j x nRows)
+
 Les 3 premières moyennes et écart-types pour blues.00000.wav sont :
 
 ```
-300.82, 297.78, 735.82, 595.73, 772.67, 605.82,
+m1: 300.82, std1 :297.78, m2 : 735.82, std2 :595.73, m3 : 772.67, std3 : 605.82,
 ```
 
 ## Séance du 3 Mai
@@ -166,7 +178,11 @@ Un score est affiché, il correspond à l'accuracy. L'accuracy est une métrique
 
 Vous pouvez sauvegarder W et b dans un fichier csv puis effectuer la prédiction avec un programme C. 
 
+Pour lire les poids W et b, vous pouvez utiliser la fonction [`read_array`](utils/utils.c).
+
 ## Séance du 10 Mai
+
+
 
 
 ## Soutenance du 24 Mai
