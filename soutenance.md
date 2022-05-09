@@ -3,7 +3,12 @@
 ## Déroulement de la soutenance 
 
 Les soutenances se dérouleront en salle 2413 de 14h45 à 18h, la sortie du vidéo-projecteur vers votre ordinateur est VGA ou HDMI, voir si vous disposez de ces ports sur votre ordinateur.
-Un planning de passage est disponible ![ici](figures/planning.png). Je vous conseille d'assister à la présentation de vos collègues.
+Un planning de passage est le suivant :
+
+ <img src="figures/planning.png" alt="drawing" width="800"/>. 
+
+
+Vous pouvez assister à la présentation de vos collègues.
 
 La durée de la soutenance est de 14' avec 10' maximum de présentation / démo  et 4' de questions.
 

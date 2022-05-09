@@ -194,5 +194,5 @@ Préparation de la [soutenance](soutenance.md).
 
 ## Soutenance du 24 Mai
 
-Le planning de passage est disponible ![ici](figures/planning.png).
-Le déroulement de la soutenance ainsi qu'une grille de notation indicative sont présentés [ici](soutenance.md).
+Le planning de passage est disponible [ici](figures/planning.png).
+ Le déroulement de la soutenance ainsi qu'une grille de notation indicative sont présentés [ici](soutenance.md).
