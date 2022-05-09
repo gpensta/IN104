@@ -128,7 +128,7 @@ La séance du 10 mai pourrait être consacrée à la finalisation du projet avan
 
 Pour accélérer le développement, vous pouvez également vous répartir les tâches indépendantes : [Makefile](Makefile), Git / GitHub, module pour extraire la moyenne et l'écart-type selon les lignes d'un tableau (sortie de [STFT](features-encoding/stft.c) : `magnitude`), module de prédiction (lecture d'un fichier csv de poids W et b puis produit matriciel W @ x + b et argmax du résultat), etc.
 
-Avec les paramètres de [STFT](features-encoding/stft.c) indiqués pour blues.00000.wav, les 10 premières valeurs de `magnitude` sont les suivantes :
+Avec les paramètres de [STFT](features-encoding/stft.c) indiqués pour blues.00000.wav, les 10 premières valeurs de `magnitude` sont les suivantes (environ) :
 
 ```
 96.167805
@@ -148,14 +148,13 @@ La structure de magnitude est la suivante :
 
 <img src="figures/structure_magnitude.png" alt="drawing" width="500"/>
 
-
 Magnitude est en fait un vecteur 1D **représentant une matrice où les colonnes sont concaténées** . 
 On accède donc à l'élément (i, j) de la matrice avec l'indice (i + j x nRows)
 
-Les 3 premières moyennes et écart-types pour blues.00000.wav sont :
+Les 3 premières moyennes et écart-types pour blues.00000.wav sont (environ) :
 
 ```
-m1: 300.82, std1 :297.78, m2 : 735.82, std2 :595.73, m3 : 772.67, std3 : 605.82,
+m1: 300.82, std1 : 297.78, m2 : 735.82, std2 : 595.73, m3 : 772.67, std3 : 605.82,
 ```
 
 ## Séance du 3 Mai
@@ -168,10 +167,16 @@ A cette étape, vous devez avoir un fichier csv de 1000 lignes et 514 + 1 colonn
 Il faut classifier ces vecteurs avec le programme python : [`classifier.py`](classifier/classifier.py). Avant de l'utiliser, vous avez deux bibliothèques à installer.
 
 ```bash
+## INSTALLATION BIBLIOTHEQUES
+
 sudo apt update
 sudo apt install python3-pip  # gestionnaire de bibliothèques
 pip3 install scikit-learn # bibliothèque d'algorithmes d'apprentissage
 pip3 install pandas # bibliothèque de gestion des données (mise-en-forme, statistiques, visualisation)
+
+## EXECUTION PROGRAMME PYTHON
+
+python3 classifier.py
 ```
 
 Un score est affiché, il correspond à l'accuracy. L'accuracy est une métrique représentant le pourcentage de morceaux classifiés correctement sur la base de données de test. Vous devriez obtenir un score compris entre 0.6 et 0.85.
@@ -182,9 +187,12 @@ Pour lire les poids W et b, vous pouvez utiliser la fonction [`read_array`](util
 
 ## Séance du 10 Mai
 
+### Objectifs de la séance
 
-
+Finalisation du projet (nettoyage des warnings, organisation des fichiers et dossiers, mise-en-place de Makefile, mise-au-propre de la branche master de git).
+Préparation de la [soutenance](soutenance.md). 
 
 ## Soutenance du 24 Mai
 
+Le planning de passage est disponible [ici](https://docs.google.com/spreadsheets/d/1x39D_9GIRYmTh7bnlPFFJCIwaDIV3mlcG8qN1mbHVsg/edit?usp=sharing)
 Le déroulement de la soutenance ainsi qu'une grille de notation indicative sont présentés [ici](soutenance.md).
