@@ -10,13 +10,10 @@ import numpy as np
 
 PATH = r'./data/features.csv'
 
-dataset = pd.read_csv(PATH,sep=';')
-columns = dataset.columns.tolist() # get the columns
+dataset = np.genfromtxt(PATH, delimiter=";")
 
-batch_audio = pd.DataFrame(dataset).to_numpy()
-
-features = batch_audio[:, 1:]
-y = batch_audio[:, 0]
+features = dataset[:, 1:-1]
+y = dataset[:, 0]
 
 X_train, X_test, y_train, y_test = train_test_split(features, y, test_size=0.2, random_state=0)
 
