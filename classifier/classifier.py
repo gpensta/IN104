@@ -12,7 +12,12 @@ PATH = r'./data/features.csv'
 
 dataset = np.genfromtxt(PATH, delimiter=";")
 
-features = dataset[:, 1:-1]
+features = dataset[:, 1:-1] # prend tout le tableau sauf la première et la dernière colonne. 
+
+print(f"Le tableau des descripteurs est de dimension : {features.shape}.") 
+
+# Il devrait être de dimension 1000 x 514, si le nombre de colonne n'est pas le bon vous pouvez modifier features = dataset[:, 1:-1] par features = dataset[:, 1:-2] (cela supprime les 2 dernières colonnes)
+
 y = dataset[:, 0]
 
 X_train, X_test, y_train, y_test = train_test_split(features, y, test_size=0.2, random_state=0)

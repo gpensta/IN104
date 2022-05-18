@@ -9,11 +9,11 @@ Produire un programme C compilé permettant d'effectuer une prédiction de genre
 Base de données de fichiers audios : http://marsyas.info/downloads/datasets.html (bibliographie https://arxiv.org/pdf/1306.1461.pdf)
 
 
-Projet permettant d'extraire les STFT d'un son : https://github.com/Steboss/music_retrieval/tree/master/stft
+Projet permettant d'extraire les STFT d'un son https://github.com/Steboss/music_retrieval/tree/master/stft
 
-Bibliothèque Python d'algorithmes de classification : https://scikit-learn.org/stable/modules/svm.html#svm-classification
+[Bibliothèque Python d'algorithmes de classification](https://scikit-learn.org/stable/modules/svm.html#svm-classification)
 
-Tableau d'avancement : https://docs.google.com/spreadsheets/d/1iR_tJWAhS-ZisnpE-PrqFb7A_0W4x8w9xwW4t1x4P6A/edit?usp=sharing
+[Tableau d'avancement](https://docs.google.com/spreadsheets/d/1iR_tJWAhS-ZisnpE-PrqFb7A_0W4x8w9xwW4t1x4P6A/edit?usp=sharing)
 
 ## Séance du 22 mars
 
@@ -46,7 +46,7 @@ Penser à mettre à jour le tableau d'avancement.
 Concernant la gestion de projet, j'ai ajouté des éléments aux slides ainsi qu'au descriptif détaillé. Un [Makefile](Makefile) générique est par ailleurs disponible. 
 Si vous souhaitez importer/télécharger ces modifications et que vous avez cloné gpensta/IN104, il vous suffit d'effectuer la commande `git pull` ou `git pull origin master`. 
 
-Concernant l'objectif de la séance du 29 mars, si vous ne savez pas quels arguments spécifier dans la fonction STFT, les lignes 30 - 56 de https://github.com/Steboss/music_retrieval/blob/master/stft/installer/stft.pyx vous éclairent. 
+Concernant l'objectif de la séance du 29 mars, si vous ne savez pas quels arguments spécifier dans la fonction STFT, les [lignes 30 - 56](https://github.com/Steboss/music_retrieval/blob/master/stft/installer/stft.pyx) vous éclairent. 
 
 **Objectifs** : Compresser le tableau des STFT en un vecteur 1D en prenant la moyenne et l'écart-type (selon l'axe des fréquences ou selon l'axe du temps) et écrire ce vecteur dans un fichier csv précédé du label correspondant au genre musical représenté par le son encodé (entier compris entre 0 et 9, e.g. blues := 0, metal := 6, rock := 9). Par exemple, pour du classique, nous devrions écrire la ligne suivante :
 
@@ -88,7 +88,7 @@ double* stft(double *wav_data, int samples, int windowSize, int hop_size, double
 
 `wav_data` := signal audio en entrée (sortie de audio_read).
 
-`samples` := la dimension du tableau magnitude (sortie de stft), elle vaut nCols x nRows = int( (`length`/(`windowSize`/2))*((`windowSize`/2)+1)) (c.f ligne 36 de https://github.com/Steboss/music_retrieval/blob/master/stft/installer/stft.pyx).
+`samples` := la dimension du tableau magnitude (sortie de stft), elle vaut nCols x nRows = int( (`length`/(`windowSize`/2))*((`windowSize`/2)+1)) (c.f. [ligne 36](https://github.com/Steboss/music_retrieval/blob/master/stft/installer/stft.pyx)).
 
 `windowSize` := la taille de la fenêtre, on peut choisir 512 afin d'avoir un vecteur encodé de taille raisonnable.
 
