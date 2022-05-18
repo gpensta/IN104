@@ -16,7 +16,7 @@ features = dataset[:, 1:-1] # prend tout le tableau sauf la première et la dern
 
 print(f"Le tableau des descripteurs est de dimension : {features.shape}.") 
 
-# Il devrait être de dimension 1000 x 514, si le nombre de colonne n'est pas le bon vous pouvez modifier features = dataset[:, 1:-1] par features = dataset[:, 1:-2] (cela supprime les 2 dernières colonnes)
+# Il devrait être de dimensions 1000 x 514, si le nombre de colonne n'est pas le bon vous pouvez modifier features = dataset[:, 1:-1] par features = dataset[:, 1:-2] (cela supprime les 2 dernières colonnes)
 
 y = dataset[:, 0]
 
