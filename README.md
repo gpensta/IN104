@@ -126,7 +126,7 @@ D'ici le 3 mai, si vous avez un élément bloquant la validation de cette tâche
 Selon cette prévision, vous pourriez alors effectuer l'entrainement et la prédiction le 3 mai, cela est rapide.
 La séance du 10 mai pourrait être consacrée à la finalisation du projet avant la soutenance.
 
-Pour accélérer le développement, vous pouvez également vous répartir les tâches indépendantes : [Makefile](Makefile), Git / GitHub, module pour extraire la moyenne et l'écart-type selon les lignes d'un tableau (sortie de [STFT](features-encoding/stft.c) : `magnitude`), module de prédiction (lecture d'un fichier csv de poids W et b puis produit matriciel W @ x + b et argmax du résultat), etc.
+Pour accélérer le développement, vous pouvez également vous répartir les tâches indépendantes : [Makefile](Makefile) (attention dans Makefile les indentation sont importantes et ce ne sont que des tabs et non des espaces), Git / GitHub, module pour extraire la moyenne et l'écart-type selon les lignes d'un tableau (sortie de [STFT](features-encoding/stft.c) : `magnitude`), module de prédiction (lecture d'un fichier csv de poids W et b puis produit matriciel W @ x + b et argmax du résultat), etc.
 
 Avec les paramètres de [STFT](features-encoding/stft.c) indiqués pour blues.00000.wav, les 10 premières valeurs de `magnitude` sont les suivantes (environ) :
 
@@ -189,7 +189,7 @@ Pour lire les poids W et b, vous pouvez utiliser la fonction [`read_array`](util
 
 ### Objectifs de la séance
 
-Finalisation du projet (nettoyage des warnings, organisation des fichiers et dossiers, mise-en-place de Makefile, mise-au-propre de la branche master de git).
+Finalisation du projet (nettoyage des warnings, organisation des fichiers et dossiers, mise-en-place de Makefile (indentation avec TAB et pas espaces), mise-au-propre de la branche master de git voir .gitignore pour éviter de pousser les binaires et la BDD sur git).
 Préparation de la [soutenance](soutenance.md). 
 
 ## Soutenance du 24 Mai
